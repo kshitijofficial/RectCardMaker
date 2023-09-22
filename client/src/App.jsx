@@ -5,11 +5,11 @@ import './App.css'
 function App() {
   const [cards,setCards]=useState([{title:"Card 1",content:"content 1"}]) 
   
-  const cardGenerator =(title,content)=>{
+  const cardGenerator =()=>{
     
      const newObject ={
-      title:`${title}`,
-      content:`${content}`
+      title:`Card ${cards.length+1}`,
+      content:`Content ${cards.length+1}`
      }
      setCards([...cards,newObject]);
   }
