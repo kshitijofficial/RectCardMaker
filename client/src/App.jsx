@@ -1,22 +1,24 @@
 import { useState } from 'react'
 import Card from './Card'
 import './App.css'
+import Form from './form'
 
 function App() {
-  const [cards,setCards]=useState([{title:"Card 1",content:"content 1"}]) 
+  const [cards,setCards]=useState([]) 
   
-  const cardGenerator =(title,content)=>{
+  const cardGenerator =(name,age)=>{
     
      const newObject ={
-      title:`${title}`,
-      content:`${content}`
+      title:`${name}`,
+      content:`${age}`
      }
      setCards([...cards,newObject]);
   }
   return (
     <>
+    <Form cardGenerator={cardGenerator}/>
     <div className='app'>
-    <button onClick={cardGenerator}>Card Generator</button>
+    {/* <button onClick={cardGenerator}>Card Generator</button> */}
       <div className='card-container'>
           {cards.map((card,index)=>{
             return(
